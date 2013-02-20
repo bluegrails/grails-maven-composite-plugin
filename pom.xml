@@ -4,7 +4,7 @@
 
   <groupId>com.bluetrainsoftware.bluegrails</groupId>
   <artifactId>grails-maven-composite-plugin</artifactId>
-  <version>1.1</version>
+  <version>2.1</version>
   <packaging>maven-plugin</packaging>
   
   <name>Maven plugin for GRAILS composites so they can use grails-app and grails-plugin</name>

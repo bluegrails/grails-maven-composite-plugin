@@ -18,32 +18,48 @@
   Composites do not process these, they just "know" about them and need to know what kind of extension to look for
 -->
 <component-set>
-  <components>
-    <component>
-      <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
-      <role-hint>grails-app</role-hint>
-      <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
-      <configuration>
-        <extension>war</extension>
-        <type>grails-app</type>
-        <packaging>grails-app</packaging>
-        <language>java</language>
-        <addedToClasspath>false</addedToClasspath>
-      </configuration>
-    </component>
+    <components>
+        <component>
+            <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+            <role-hint>grails-app</role-hint>
+            <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
+            <configuration>
+                <extension>war</extension>
+                <type>grails-app</type>
+                <packaging>grails-app</packaging>
+                <language>java</language>
+                <addedToClasspath>false</addedToClasspath>
+            </configuration>
+        </component>
 
-    <component>
-      <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
-      <role-hint>grails-plugin</role-hint>
-      <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
-      <configuration>
-        <extension>zip</extension>
-        <type>grails-plugin</type>
-        <packaging>grails-plugin</packaging>
-        <language>java</language>
-        <addedToClasspath>true</addedToClasspath>
-      </configuration>
-    </component>
+        <component>
+            <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+            <role-hint>grails-plugin</role-hint>
+            <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
+            <configuration>
+                <extension>zip</extension>
+                <type>grails-plugin</type>
+                <packaging>grails-plugin</packaging>
+                <language>java</language>
+                <addedToClasspath>true</addedToClasspath>
+            </configuration>
+        </component>
 
-  </components>
+        <!--
+         This kind of plugin will compile the binary form of the plugin first, and then make a classifier "plugin" attachment of the source plugin
+        -->
+        <component>
+            <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+            <role-hint>grails-plugin2</role-hint>
+            <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
+            <configuration>
+                <extension>jar</extension>
+                <type>grails-plugin2</type>
+                <packaging>grails-plugin2</packaging>
+                <language>java</language>
+                <addedToClasspath>true</addedToClasspath>
+            </configuration>
+        </component>
+
+    </components>
 </component-set>
